@@ -68,5 +68,11 @@
   }
   
   div.container {
-    margin:     10px;
+    background-color: #AFA;
+    margin:     20px;
+    width:      300px;
+  }
+  
+  div.container > div.content > * {
+    margin:     0 10px;
   }
