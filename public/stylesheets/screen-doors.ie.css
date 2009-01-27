@@ -1,6 +1,10 @@
 /* IE 6 overrides                                                            */
 /* ========================================================================= */
 
+  .container {
+    zoom: 1;
+  }
+
   .container:before {
     background-image: url(../images/8bit/corner_ne.png);
     content:          url(../images/8bit/corner_nw.png);

@@ -1,0 +1,63 @@
+
+/* Container                                                                 */
+/* ========================================================================= */
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    .container {
+      padding: 20px 0;
+    }
+  }
+  
+  .container {
+    background: #EEE;
+    position:   relative;
+  }
+
+  .container:before {
+    position:   absolute;
+    top:        0;
+    left:       0;
+    z-index:    0;
+    background: url(../images/corner_ne.png) no-repeat top right;
+    content:    url(../images/corner_nw.png);
+    display:    block;
+    width:      100%;
+    height:     20px;
+  }
+
+  .container:after {
+    position:   absolute;
+    bottom:     0;
+    left:       0;
+    z-index:    0;
+    background: url(../images/corner_se.png) no-repeat top right;
+    content:    url(../images/corner_sw.png);
+    display:    block;
+    width:      100%;
+    height:     20px;
+  }
+
+  /* clear fix ------------------------------------------------------------- */
+
+  .container > div.content:after {
+    content:      '.';
+    display:      block;
+    clear:        both;
+    visibility:   hidden;
+    height:       0;
+    line-height:  1;
+  }
+
+  .container > div.content {
+    display:      inline-block;
+    line-height:  1;
+  }
+
+  html[xmlns] .container > div.content {
+    display:    block;
+  }
+
+  * html .container > div.content {
+    height:     1%;
+  }
+
