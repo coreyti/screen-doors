@@ -1,0 +1,12 @@
+/* IE 6 overrides                                                            */
+/* ========================================================================= */
+
+  .container:before {
+    background-image: url(../images/8bit/corner_ne.png);
+    content:          url(../images/8bit/corner_nw.png);
+  }
+
+  .container:after {
+    background-image: url(../images/8bit/corner_se.png);
+    content:          url(../images/8bit/corner_sw.png);
+  }
