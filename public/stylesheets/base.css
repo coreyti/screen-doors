@@ -53,12 +53,20 @@
   }
 
 
-/* Page                                                                      */
+/* Elements                                                                  */
 /* ========================================================================= */
 
   body {
     background: #DDF;
   }
+
+  p {
+    margin: 1em;
+  }
+
+
+/* Page                                                                      */
+/* ========================================================================= */
 
   div#page {
     background: #FFF;
@@ -68,11 +76,38 @@
   }
   
   div.container {
-    background-color: #AFA;
-    margin:     20px;
-    width:      300px;
+    float: left;
+    background-color: #DCF;
+    margin:     10px;
+    width:      459px;
   }
   
-  div.container > div.content > * {
-    margin:     0 10px;
+  div.container > div.content.padded {
+    padding:    10px;
+  }
+
+
+/* Clear Fix                                                                 */
+/* ========================================================================= */
+
+  div#page:after {
+    content:      '.';
+    display:      block;
+    clear:        both;
+    visibility:   hidden;
+    height:       0;
+    line-height:  1;
+  }
+
+  div#page {
+    display:      inline-block;
+    line-height:  1;
+  }
+
+  html[xmlns] div#page {
+    display:    block;
+  }
+
+  * html div#page {
+    height:     1%;
   }

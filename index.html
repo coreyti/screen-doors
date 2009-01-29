@@ -5,30 +5,50 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <title>screen-doors (examples)</title>
-  <link href='public/stylesheets/base.css'         rel='stylesheet' type='text/css'/>
-  <link href='public/stylesheets/screen-doors.css' rel='stylesheet' type='text/css'/>
-
-  <!--[if lt IE 8]><script type='text/javascript' src='public/javascripts/ie8.js'></script><![endif]-->
-  <!--[if lt IE 7]><link type='text/css' rel='stylesheet' href='public/stylesheets/screen-doors.ie.css' media='all' /><![endif]-->
+  <link rel='stylesheet' type='text/css' href='public/stylesheets/base.css' />
+  <link rel='stylesheet' type='text/css' href='public/stylesheets/screen-doors.css' />
+  <!--[if lt IE 8]>
+    <script type='text/javascript' src='public/javascripts/ie8.js'></script>
+    <link rel='stylesheet' type='text/css' href='public/stylesheets/screen-doors.ie.css' />
+  <![endif]-->
 </head>
 
 <body>
   <div id='page'>
     <div class='container'>
-      <div class='content'>
-        <div>
-          <div>01</div>
-          <div>02</div>
-          <div>03</div>
-          <div>04</div>
-        </div>
-    
+      <div class='content padded'>
         <ul>
-          <li><a href="#">one</a></li>
-          <li><a href="#">two</a></li>
+          <li>item 01</li>
+          <li>item 02</li>
+          <li>item 03</li>
+          <li>item 04</li>
+          <li>item 05</li>
         </ul>
       </div>
     </div>
+
+    <div class='container'>
+      <div class='content padded'>
+        <ul>
+          <li>item 01</li>
+          <li>item 02</li>
+          <li>item 03</li>
+          <li>item 04</li>
+          <li>item 05</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class='container'>
+      <div class='content'>
+        <div><a href="#">link 01</a></div>
+        <p>no padding on this one</p>
+        <p>the links at the top and bottom should still be available</p>
+        <p><em>(IE7 currently obscures bottom link)</em></p>
+        <div><a href="#">link 02</a></div>
+      </div>
+    </div>
+
   </div>
 </body>
-</html>    
+</html>

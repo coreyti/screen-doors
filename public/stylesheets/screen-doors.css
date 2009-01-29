@@ -1,107 +1,65 @@
 
 /* Container (variables)                                                     */
 /* ========================================================================= */
-  
+
   .container {
-    background-image: url(../images/mask_outer/border_e.png);
+    background-image: url(../images/corner_nw.png);
   }
-  
+
   .container:before {
-    background-image: url(../images/mask_outer/corner_ne.png);
-    content:          url(../images/mask_outer/corner_nw.png);
+    background-image: url(../images/corner_ne.png);
   }
 
   .container:after {
-    background-image: url(../images/mask_outer/corner_se.png);
-    content:          url(../images/mask_outer/corner_sw.png);
-  }
+    /* NOTE: IE's .container:after { height } must match these images.
+             relevant modifications should be made in screen-doors.ie.css */
 
-  .container > div.content {
-    background-image: url(../images/mask_outer/border_w.png);
-  }
-
-  .container:before,
-  .container:after {
-    height:     10px;
-  }
-
-  /* beware this hack-nest, done for rendering correction...                 */
-  /*  1a. additional padding to match image heights, needed by IE and Safari */
-  /*  1b. use of negative margin so Firefox doesn't display too much space   */
-  /*  2. use of first-of-type pseudo-class to drop margin from Safari        */
-  /*  3. use of quoted class name to do the same in Internet Explorer        */  
-  .container > div.content {
-    padding:    10px 0;
-    margin:     -10px 0;
-  }
-  
-  body:first-of-type .container > div.content {
-    margin: 0;
-  }
-
-  .container > div.content {
-    "margin":   0;
+    background-image: url(../images/corner_se.png);
+    content:          url(../images/corner_sw.png);
   }
 
 
 /* Container (foundation)                                                    */
 /* ========================================================================= */
 
+  /* NOTE: firefox up to version 3.1 (exclusive?) does not support
+           positioning of pseudo-elements (see the last commit for example),
+           which is why you'll see crazy margins and overflow here.
+           
+           on the other hand, where the last commit also required framework
+           styling of the "content" div and six images (when making borders),
+           this version adds no styling to that content element and needs
+           only four images. */
+
   .container {
+    background-position:  top left;
+    background-repeat:    no-repeat;
     position:             relative;
-    background-repeat:    repeat-y;
-    background-position:  top right;
+    overflow:             hidden;
   }
 
   .container:before {
-    position:   absolute;
-    top:        0;
-    left:       0;
-    z-index:    0;
-    display:    block;
-    width:      100%;
-    background-repeat:    no-repeat;
     background-position:  top right;
+    background-repeat:    no-repeat;
+    height:               0;
+    width:                100%;
+    margin-bottom:        -10000px;
+    padding-bottom:       10000px;
+    display:              block;
+    content:              '';
   }
 
   .container:after {
-    position:   absolute;
-    bottom:     0;
-    left:       0;
-    z-index:    0;
-    display:    block;
-    width:      100%;
+    /* NOTE: background-position must be top for IE (and is ok for others) */
+
+    background-position:  top right; 
     background-repeat:    no-repeat;
-    background-position:  top right;
+    width:                100%;
+    display:              block;
   }
 
-  .container > div.content {
-    background-repeat:    repeat-y;
-    background-position:  top left;
-  }
-
-
-/* Clear Fix                                                                 */
-/* ========================================================================= */
-
-  .container > div.content:after {
-    content:      '.';
-    display:      block;
-    clear:        both;
-    visibility:   hidden;
-    height:       0;
-    line-height:  1;
-  }
-
-  .container > div.content {
-    display:      inline-block;
-    line-height:  1;
-  }
-
-  html[xmlns] .container > div.content {
-    display:    block;
-  }
-
-  * html .container > div.content {
-    height:     1%;
+  .container > * {
+    margin:     0 !important;
+    position:   relative;
+    z-index:    10;
   }
