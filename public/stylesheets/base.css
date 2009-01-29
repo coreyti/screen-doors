@@ -61,7 +61,7 @@
   }
 
   p {
-    margin: 1em;
+    margin: 1em 0;
   }
 
 
@@ -74,15 +74,15 @@
     margin:     10px auto;
     border:     1px solid #999;
   }
-  
-  div.container {
-    float: left;
-    background-color: #DCF;
-    margin:     10px;
+
+  div.section {
+    background: url(/public/images/pivotal.gif) no-repeat bottom right;
+    float:      left;
+    margin:     20px;
     width:      459px;
   }
-  
-  div.container > div.content.padded {
+
+  div.section div.content {
     padding:    10px;
   }
 
@@ -90,6 +90,7 @@
 /* Clear Fix                                                                 */
 /* ========================================================================= */
 
+  div.section:after,
   div#page:after {
     content:      '.';
     display:      block;
@@ -99,15 +100,18 @@
     line-height:  1;
   }
 
+  div.section,
   div#page {
     display:      inline-block;
     line-height:  1;
   }
 
+  html[xmlns] div.section,
   html[xmlns] div#page {
     display:    block;
   }
 
+  * html div.section,
   * html div#page {
     height:     1%;
   }

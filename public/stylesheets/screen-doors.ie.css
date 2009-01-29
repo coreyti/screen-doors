@@ -1,12 +1,14 @@
 
-/* IE 6 overrides                                                            */
+/* IE overrides                                                              */
 /* ========================================================================= */
 
   .container {
+    _background-image: url(../images/8bit/corner_nw.png); /* IE6 only */
     zoom:       1;
   }
 
   .container:before {
+    _background-image: url(../images/8bit/corner_ne.png); /* IE6 only */
     height:     100%;
     position:   absolute;
     top:        0;
@@ -15,6 +17,8 @@
   }
 
   .container:after {
+    _background-image: url(../images/8bit/corner_se.png); /* IE6 only */
+    _content:          url(../images/8bit/corner_sw.png); /* IE6 only */
     height:     10px;
     position:   absolute;
     bottom:     0;
